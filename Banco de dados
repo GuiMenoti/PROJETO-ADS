@@ -1,0 +1,100 @@
+create database dbnatural;
+
+use dbnatural;
+
+create table tbusuarios(
+id int primary key auto_increment,
+nome varchar (15) not null,
+usuario varchar (20) not null unique,
+fone varchar (15) not null,
+email varchar (30) not null,
+senha varchar (20) not null
+
+);
+alter table tbusuarios add column perfil varchar(20) not null;
+
+insert into tbusuarios (id, nome, usuario, fone, email, senha)
+values('1', 'admin','Admin','9999-9999','admin@gmail.com','admin');
+
+insert into tbusuarios (id, nome, usuario, fone, email, senha)
+values('2', 'Convidado','convidado','9999-9999','convidado@gmail.com','123456');
+
+insert into tbusuarios(nome,usuario,fone,email,senha,perfil)
+values('nome','oflyes','fone','email','senha','user');
+
+update tbusuarios set perfil='admin' where id=1;
+update tbusuarios set perfil='user' where id=2; 
+
+
+
+describe tbusuarios;
+
+
+select * from tbusuarios;
+
+create table tbplantas (
+    id int primary key,
+    nome VARCHAR(100) NOT NULL,
+    nome_cientifico VARCHAR(100) NOT NULL,
+    origem VARCHAR(100),
+    descricao TEXT
+);
+
+INSERT INTO tbplantas (id,nome, nome_cientifico, descricao, origem)
+VALUES ('1','Dracena-de-madagascar', 'Dracaena margiata', 'Se desenvolve muito bem em locais de pouca ou média luminosidade e tolera seca, suportando também grandes variações de temperaturas. Só precisa ser regada uma vez por semana.', 'África');
+
+INSERT INTO tbplantas (id,nome, nome_cientifico, descricao, origem)
+VALUES ('2','Dracena', 'Dracaena fragrans', 'Cultivada em meia-sombra ou luz difusa.', 'África');
+
+INSERT INTO tbplantas (id,nome, nome_cientifico, descricao, origem)
+VALUES ('3','Figo-folha-de-violino', 'Ficus lyrata', 'Necessita de um ambiente com bastante luz natural, seja de meia-sombra, seja de sol pleno.', 'África');
+
+INSERT INTO tbplantas (id,nome, nome_cientifico, descricao, origem)
+VALUES ('4','Camedorea-elegante', 'Chamaedorea elegans', 'Palmeira de pequeno porte e sem espinhos, a camedorea-elegante também é cultivada em meia-sombra ou luz difusa. Gosta do solo úmido, mas com boa drenagem.', 'América Central');
+
+INSERT INTO tbplantas (id,nome, nome_cientifico, descricao, origem)
+VALUES ('5','Yucca', '0' , 'De clima também quente e seco, a Yucca necessita de pelo menos meia-sombra ou luz de sol pleno, sendo colocada dentro de casa perto de janelas, onde haja incidência de luz solar.', 'América Central');
+
+INSERT INTO tbplantas (id,nome, nome_cientifico, descricao, origem)
+VALUES ('6','Estrelícia', 'Strelitzia reginae', 'A estrelícia é usada em arranjos e na ornamentação de eventos. Ela possui cores marcantes. Desenvolve bem em solo úmido, mas não encharcado, podendo uma touceira dar hastes florais até 20 vezes no ano.', 'África');
+
+INSERT INTO tbplantas (id,nome, nome_cientifico, descricao, origem)
+VALUES ('7','Marantas', '0', 'As marantas são plantas ótimas para ambientes internos em locais de sombra ou meia-sombra, sem sol forte diretamente em suas folhas.', 'Regiões Tropicais');
+
+INSERT INTO tbplantas (id,nome, nome_cientifico, descricao, origem)
+VALUES ('8','Costela-de-adão', 'Monstera deliciosa', 'Uma planta queridinha na decoração tropical, gosta de ambientes de meia-sombra, com bastante luminosidade, mas sem sol forte diretamente em suas folhas.', 'América do Norte');
+
+INSERT INTO tbplantas (id,nome, nome_cientifico, descricao, origem)
+VALUES ('9','Bromélia', 'Liliopsida', 'São plantas exuberantes que também florescem quando estão em condições adequadas de cultivo. O melhor ambiente é em meia-sombra, com bastante luminosidade em suas folhas, assim permanecerá mais colorida e chamativa.', 'América Central, América Central e América do Sul');
+
+INSERT INTO tbplantas (id,nome, nome_cientifico, descricao, origem)
+VALUES ('10','Bananeira', 'Musa spp.', 'A mesma substância química encontrada no antidepressivo Prozac é encontrada na banana. Comer a fruta é um tratamento natural para reduzir os efeitos do estresse, da ansiedade e ainda melhora o humor.', 'Sul e Sudeste do continente Asiático, África oriental e nas ilhas do Pacífico e África ocidental');
+
+INSERT INTO tbplantas (id,nome, nome_cientifico, descricao, origem)
+VALUES ('11','Açaí', 'Euterpe oleracea', 'Sabe-se que o açaí tem esteróis vegetais e, por esta razão, reduz a absorção do colesterol, melhorando a saúde do coração.', 'Norte brasileiro');
+
+INSERT INTO tbplantas (id,nome, nome_cientifico, descricao, origem)
+VALUES ('12','Guaraná', 'Paullinia cupana Kunth', 'Possui efeitos energizastes poderosos. A estrutura química da cafeína presente no guaraná é diferente, o que faz com que o fruto conceda energia de maneira ainda mais eficiente do que o café, por exemplo. A liberação de energia no organismo se dá lentamente, causando um efeito mais duradouro e contínuo no metabolismo.', 'Amazônia');
+
+INSERT INTO tbplantas (id,nome, nome_cientifico, descricao, origem)
+VALUES ('13','Mangueira', 'Mangifera indica', 'A manga é considerada a segunda fruta tropical mais consumida no mundo, perdendo somente para a banana. Para que sejam produzidos bons frutos, as mangueiras necessitam de calor e períodos secos.', 'Sul e Sudeste Asiático');
+
+INSERT INTO tbplantas (id,nome, nome_cientifico, descricao, origem)
+VALUES ('14','Carambola', 'Averrhoa carambola', 'Fruta muito rica em sais minerais, vitaminas A, C, e complexo B, é ainda, fonte natural de ácido oxálico. O fruto quando cortado no sentido transversal adquire a forma de uma perfeita estrela de cinco pontas, característica que lhe concedeu o nome mundial de “star fruit”.', 'Ásia tropical');
+
+INSERT INTO tbplantas (id,nome, nome_cientifico, descricao, origem)
+VALUES ('15','Grifínia, Amarílis-azul', 'Griffinia liboniana', 'Uma rara bulbosa brasileira que deveria ser mais amplamente cultivada, haja vista sua beleza e facilidade de cultivo. Apesar do crescimento moderado a lento, é uma excelente escolha para ser plantada em canteiros e maciços no jardim, preferencialmente em locais sombreados, ou mesmo em vasos e jardineiras, decorando ambientes internos com maestria. Mesmo sem flores é uma planta de folhagem vistosa e bonita.', 'América do Sul, Brasil');
+
+INSERT INTO tbplantas (id,nome, nome_cientifico, descricao, origem)
+VALUES ('16','Estrofantina, Ouabaína', 'Strophanthus gratus', 'Uma trepadeira vigorosa, de folhagem brilhante, ideal para cobrir pérgolas, caramanchões, cercas, treliças, arcos, entre outras estruturas. Além de servir como trepadeira, a estrofantina também pode ser conduzida como arbusto, com podas de formação, não ultrapassando assim dois ou três metros de altura. Também pode ser plantada em vasos e jardineiras. No paisagismo ela é geralmente escolhida pelo exotismo de suas flores, assim como pela delicada e intensa fragrância. Ideal para regiões de clima tropical a equatorial.', 'África, Burkina Faso, Camarões, Costa do Marfim, Gabão, Gana, Guiné Equatorial, Libéria, Nigéria');
+
+INSERT INTO tbplantas (id,nome, nome_cientifico, descricao, origem)
+VALUES ('17','Calibrachoa, Mini-petúnia, Mil-sinos, Falsa-petúnia', 'Calibrachoa x hybrida', 'Elas podem ser utilizadas em maciços ou bordaduras, em cultivos de cores sólidas, misturadas ou mesmo em conjuntos com outras plantas, sempre com um efeito muito vistoso e colorido. O efeito de “cascata” que produz a torna uma excelente escolha de espécie para ser admirada na altura dos olhos, como no coroamento de muros e taludes por exemplo. Seu crescimento é rápido e a manutenção consiste no beliscamento dos ponteiros durante o crescimento, para adensamento da planta, além de uma poda para remoção das flores velhas no fim do verão, estimulando assim uma nova floração. Se bem manejada pode florescer da primavera ao outono.', 'América do Sul, Brasil, Chile');
+
+INSERT INTO tbplantas (id,nome, nome_cientifico, descricao, origem)
+VALUES ('18','Dendróbio-de-Loddigesii', 'Dendrobium loddigesii', 'Com suave perfume, e flores tão chamativas, essa orquídea é bastante desejada por colecionadores e orquidófilos. Por ser de rápido crescimento e fácil cultivo, é apropriada para jardineiros iniciantes aos mais avançados. O conjunto pendente dos pseudobulbos floridos forma verdadeiras cascatas de flores, que vão se sobrepondo nas plantas antigas, em um belíssimo conjunto. Pode ser plantada diretamente nas árvores, amarradas com ráfia ou outro material biodegradável; ou mesmo em placas e vasos, de fibra, barro ou plástico, preferencialmente próprios para orquídeas.', 'Ásia, China, Laos, Vietnã');
+
+INSERT INTO tbplantas (id,nome, nome_cientifico, descricao, origem)
+VALUES ('19','Planta-diamante, Planta-diamante, Planta-jóia, Pedra-preciosa', 'Pachyphytum compactum', 'Apresenta crescimento lento a moderado, mas vale muito à pena ter essa pequena jóia na sua coleção de suculentas. Sua textura e cores diferentes são uma excelente combinação para outras espécies, ou mesmo na formação de um denso tapete em vasos e jardineiras, adornados com pedriscos que valorizem sua folhagem.', 'América do Norte, México');
+
+select * from tbplantas;
